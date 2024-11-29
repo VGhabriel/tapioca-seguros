@@ -1,1 +1,77 @@
 
+-- phpMyAdmin SQL Dump
+-- version 5.2.1
+-- https://www.phpmyadmin.net/
+--
+-- Host: 127.0.0.1
+-- Tempo de geração: 29/11/2024 às 02:59
+-- Versão do servidor: 10.4.32-MariaDB
+-- Versão do PHP: 8.2.12
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Banco de dados: `tapiocaseguros`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para tabela `cotacao`
+--
+
+CREATE TABLE `cotacao` (
+  `cod_cota` int(11) NOT NULL,
+  `corretor` varchar(200) NOT NULL,
+  `email_corretor` varchar(255) NOT NULL,
+  `telefone_corretor` varchar(20) NOT NULL,
+  `ramo` varchar(100) NOT NULL,
+  `automovel` varchar(200) NOT NULL,
+  `modelo` varchar(200) NOT NULL,
+  `segurado` varchar(200) NOT NULL,
+  `email_segurado` varchar(255) NOT NULL,
+  `cpf` varchar(100) NOT NULL,
+  `telefone_segurado` varchar(20) NOT NULL,
+  `mensagemadicional` varchar(255) NOT NULL,
+  `endereco` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Despejando dados para a tabela `cotacao`
+--
+
+INSERT INTO `cotacao` (`cod_cota`, `corretor`, `email_corretor`, `telefone_corretor`, `ramo`, `automovel`, `modelo`, `segurado`, `email_segurado`, `cpf`, `telefone_segurado`, `mensagemadicional`, `endereco`) VALUES
+(21, 'nome', 'teste@gmail.com', '119000000000', 'SP', 'moto', 'kawasaki', 'teste', 'teste@gmail.com', '421.835.247-01', '119000000000', 'teste', 'rua teste, 01');
+
+--
+-- Índices para tabelas despejadas
+--
+
+--
+-- Índices de tabela `cotacao`
+--
+ALTER TABLE `cotacao`
+  ADD PRIMARY KEY (`cod_cota`);
+
+--
+-- AUTO_INCREMENT para tabelas despejadas
+--
+
+--
+-- AUTO_INCREMENT de tabela `cotacao`
+--
+ALTER TABLE `cotacao`
+  MODIFY `cod_cota` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
